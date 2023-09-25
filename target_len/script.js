@@ -33,11 +33,7 @@ setInterval(nextSlide, 5000); // Измените интервал, если н�
 
 
 
-const slider3 = document.querySelector('.slider3')
-function nextSlide3(){
-    slider3.style.left='-320px'
-}
-nextSlide3()
+
 
 
 
@@ -70,6 +66,37 @@ document.querySelector('#prev2').addEventListener('click', function(){
     if (counter<0){counter=3}
     slider2.style.left = -400*counter + 'px'
 });
+
+
+
+const sliderContainer3 = document.querySelector('.sliderPic');
+const slider3 = document.querySelector('.slider3');
+const slides3 = document.querySelectorAll('.slider3Item');
+
+let currentIndex3 = 0;
+
+function nextSlide3() {
+  currentIndex3++;
+  if (currentIndex3 >= slides3.length) {
+    currentIndex3 = 0;
+  }
+  const translateXValue = `-${currentIndex3 * 100}%`;
+  slider3.style.transform = `translateX(${translateXValue})`;
+}
+
+// Устанавливаем интервал смены слайдов
+const interval3 = setInterval(nextSlide3, 3000); // Меняйте интервал, чтобы настроить скорость слайдера
+
+// Приостанавливаем автоматический слайдер, если пользователь наводит курсор на слайдер
+sliderContainer3.addEventListener('mouseenter', () => {
+  clearInterval(interval3);
+});
+
+// Возобновляем автоматический слайдер, когда пользователь уводит курсор с слайдера
+sliderContainer3.addEventListener('mouseleave', () => {
+  interval3 = setInterval(nextSlide3, 3000); // Меняйте интервал, если необходимо
+});
+
 
 
 counter6 = 0;
@@ -107,7 +134,7 @@ document.querySelector('#orange').addEventListener('click', function(){
 document.querySelector('#secondMainButton').addEventListener('click', function(){
     dialog.style.display = 'flex';
 });
-document.querySelector('#secondMainButton2').addEventListener('click', function(){
+document.querySelector('#secondMainButtonM').addEventListener('click', function(){
     dialog.style.display = 'flex';
 });
 document.querySelector('#blueButton').addEventListener('click', function(){
@@ -116,13 +143,15 @@ document.querySelector('#blueButton').addEventListener('click', function(){
 document.querySelector('.button4').addEventListener('click', function(){
     dialog.style.display = 'flex';
 });
+document.querySelector('#sixthMainButtonM').addEventListener('click', function(){
+    dialog.style.display = 'flex';
+});
 document.querySelector('#callme').addEventListener('click', function(){
     dialog.style.display = 'flex';
 });
-document.querySelector('.dialog').addEventListener('click', function(){
-    dialog.style.display = 'none';
-});
-document.querySelector('.modal').addEventListener('click', function(){
+
+
+document.querySelector('#exitButton').addEventListener('click', function(){
     dialog.style.display = 'none';
 });
 

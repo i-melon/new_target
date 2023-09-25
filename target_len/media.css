@@ -25,20 +25,21 @@
     header{margin: 10px;}
     .sliderButton{width: 64px;}
     .firstTitleBlock{margin-left: 10px;}
-    h1{font-size: 20px; line-height: 24px;}
     .infoRow1{margin-left: 10px; margin-top: 34px;margin-bottom: 24px; gap: 16px;}
     .info1Item1{flex-direction: column-reverse;}
     h4{font-size: 26; line-height: 28px;}
     .slider1{width: 4000px; transition: all ease 20s;}
     .block2{padding: 64px 16px;border-radius: 24px 24px 0px 0px;}
     .slider2{margin-top: 41px; display: none;}
-    .slider2M{display: flex;}
-    .block3{padding: 64px 16px;border-radius: 24px 24px 0px 0px;}
+    .mobilSlider{display:flex;}
+    #secondMainButtonM{display: flex;}
+    .block3{padding: 64px 16px;border-radius: 24px 24px 0px 0px;height: fit-content;}
     .mainButton{align-self: stretch;}
     .block3rowCol{width: 100%;}
+    #block3text{margin-top: 30px;}
     p{font-size: 16px;line-height: 28px;font-family:customFont;font-weight: 450;}
     .showVideo{display: none;}
-    .block4{padding: 94px 16px;}
+    .block4{padding: 64px 16px; border-radius: 24px 24px 0px 0px;}
     .content4rowCol h1{font-size: 40px;}
     .content4rowCol .miniText{font-size: 15px; line-height: 22px;}
     .rowCol4Item{gap: 16px;}
@@ -51,6 +52,7 @@
     .block5 .text5{font-size: 13px;line-height: 15.023px; }
     .block6{padding: 64px 16px;border-radius: 24px 24px 0px 0px;}
     .slider6{display: none;}
+    #sixthMainButtonM{display: flex;}
     .buttonRow6{display: none;}
     .buttonRow6M{display: flex;}
     .slider6M{display: flex;}
@@ -74,6 +76,85 @@
         animation: slide 10s linear infinite;
       }
 }
+@media (max-width:480px){
+    header{margin-top: 19px 16px;}
+    .block1 h1{font-size: 20px; line-height: 24px;}
+    .block1 h4{
+        color: #000;
+font-family: customFontDemiBold;
+font-size: 26px;
+font-style: normal;
+font-weight: 600;
+line-height: 28px; /* 107.692% */
+letter-spacing: -0.26px;
+    }
+    .block1 h6{
+        color: #000;
+font-family: customFont;
+font-size: 15px;
+font-style: normal;
+font-weight: 450;
+line-height: 28px; /* 186.667% */
+    }
+    .mainButton{
+        font-family: customFontDemiBold;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 36px; /* 225% */}
+
+
+
+.pTitle{
+    font-family: customFontDemiBold;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 133.333% */}
+h1{
+    font-family:customFontDemiBold;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px; /* 123.077% */
+    letter-spacing: -0.26px;}
+
+.modal{position: absolute;
+    left: 0; bottom: 0;
+    display: flex;
+    width: 360px;
+    padding: 32px 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 89%;
+}
+.inputField{
+    align-items: flex-start;
+}
+.zayavka{text-align: left;}
+.zayavkaTtitle{
+    color: #000;
+font-family: customFontDemiBold;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 32px; /* 133.333% */
+letter-spacing: -0.24px;
+}
+#whiteButtonInput{
+    color: #FAFAFA;
+font-family: customFontDemiBold;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 32px; /* 177.778% */
+}
+
+
+}
+
+
 @media (max-width:380px){
     .content5colrow{gap: 10px;}
     .item5{padding: 20px;}

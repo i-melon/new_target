@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @import './style.css';
         @import './overall.css';
@@ -26,10 +28,14 @@
 <body>
     <div class="dialog">
         <div class="modal">
-            <div class="zayavkaTtitle">Оставить заявку</div>
-            <div class="zayavka">Мы перезвоним вам в самое ближайшее<br> время, чтобы обсудить подробности<br> вашего проекта.</div>
-            <input type="number" placeholder="укажите номер телефона">
-            <button class="mainButton" id="whiteButton">Оставить заявку</button>
+            <img src="./imgs/exit.svg" alt="" id="exitButton">
+            <div class="inputField">
+                <div class="zayavkaTtitle">Оставить заявку</div>
+                <div class="zayavka">Мы перезвоним вам в самое ближайшее<br> время, чтобы обсудить подробности<br> вашего проекта.</div>
+                <input type="number" placeholder="+7">
+            </div>
+            
+            <button class="mainButton" id="whiteButtonInput">Оставить заявку</button>
         </div>
     </div>
     <div class="block1">
@@ -410,46 +416,62 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2278 4.22783C11.6543 3.80138 12.3457 3.80138 12.7721 4.22783L19.7721 11.2278C20.1986 11.6543 20.1986 12.3457 19.7721 12.7722L12.7721 19.7722C12.3457 20.1986 11.6543 20.1986 11.2278 19.7722C10.8013 19.3457 10.8013 18.6543 11.2278 18.2278L16.3636 13.092H4.99996C4.39686 13.092 3.90796 12.6031 3.90796 12C3.90796 11.3969 4.39686 10.908 4.99996 10.908H16.3636L11.2278 5.77215C10.8013 5.3457 10.8013 4.65428 11.2278 4.22783Z" fill="#FAFAFA"/>
               </svg></button>
         </div>
-        <div class="slider2M">
-            <div class="controller2">
-                <button class="sliderButtonL" id="prev2M"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7722 4.2278C12.3457 3.80135 11.6543 3.80135 11.2279 4.2278L4.22788 11.2278C3.80142 11.6543 3.80142 12.3457 4.22788 12.7721L11.2279 19.7721C11.6543 20.1986 12.3457 20.1986 12.7722 19.7721C13.1987 19.3457 13.1987 18.6543 12.7722 18.2278L7.63636 13.092H19C19.6031 13.092 20.092 12.6031 20.092 12C20.092 11.3969 19.6031 10.908 19 10.908H7.63636L12.7722 5.77212C13.1987 5.34567 13.1987 4.65425 12.7722 4.2278Z" fill="#FAFAFA"/>
-                  </svg>
-                </button>
-                <button class="sliderButtonR" id="next2M"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2278 4.2278C11.6543 3.80135 12.3457 3.80135 12.7721 4.2278L19.7721 11.2278C20.1986 11.6543 20.1986 12.3457 19.7721 12.7721L12.7721 19.7721C12.3457 20.1986 11.6543 20.1986 11.2278 19.7721C10.8013 19.3457 10.8013 18.6543 11.2278 18.2278L16.3636 13.092H4.99996C4.39686 13.092 3.90796 12.6031 3.90796 12C3.90796 11.3969 4.39686 10.908 4.99996 10.908H16.3636L11.2278 5.77212C10.8013 5.34567 10.8013 4.65425 11.2278 4.2278Z" fill="#FAFAFA"/>
-                  </svg>
-                </button>
+        <div class="mobilSlider">
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="contentItem2">
+                        <img src="./imgs/slider21.png" alt="marketing">
+                        <p class="pMini">Вижуал таргетинг-рекламы для Hayat<br> Consturction Group</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="contentItem2">
+                        <img src="./imgs/slider22.png" alt="marketing">
+                        <p class="pMini">Нейминг и бренд-стратегия для<br> производителя напитков Pepsi</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="contentItem2">
+                        <img src="./imgs/slider23.png" alt="marketing">
+                        <p class="pMini">Запуск рекламы поиска художника по <br>костюмам для кинофильма </p>
+                    </div>
+                </div>
+                
             </div>
-            
-            <div class="contentLine2M">
-                <div class="contentItem2">
-                    <img src="./imgs/slider21.png" alt="marketing">
-                    <p class="pMini">Вижуал таргетинг-рекламы для Hayat<br> Consturction Group</p>
-                </div>
-                <div class="contentItem2">
-                    <img src="./imgs/slider22.png" alt="marketing">
-                    <p class="pMini">Нейминг и бренд-стратегия для<br> производителя напитков Pepsi</p>
-                </div>
-                <div class="contentItem2">
-                    <img src="./imgs/slider23.png" alt="marketing">
-                    <p class="pMini">Запуск рекламы поиска художника по <br>костюмам для кинофильма </p>
-                </div>
-                <div class="contentItem2">
-                    <img src="./imgs/slider22.png" alt="marketing">
-                    <p class="pMini">Вижуал таргетинг-рекламы для Hayat<br> Consturction Group</p>
-                </div>
-            </div>
-            <button class="mainButton" id="secondMainButton2">Заказать оффер<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2278 4.22783C11.6543 3.80138 12.3457 3.80138 12.7721 4.22783L19.7721 11.2278C20.1986 11.6543 20.1986 12.3457 19.7721 12.7722L12.7721 19.7722C12.3457 20.1986 11.6543 20.1986 11.2278 19.7722C10.8013 19.3457 10.8013 18.6543 11.2278 18.2278L16.3636 13.092H4.99996C4.39686 13.092 3.90796 12.6031 3.90796 12C3.90796 11.3969 4.39686 10.908 4.99996 10.908H16.3636L11.2278 5.77215C10.8013 5.3457 10.8013 4.65428 11.2278 4.22783Z" fill="#FAFAFA"/>
-              </svg></button>
         </div>
+        <button class="mainButton" id="secondMainButtonM">Заказать оффер<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2278 4.22783C11.6543 3.80138 12.3457 3.80138 12.7721 4.22783L19.7721 11.2278C20.1986 11.6543 20.1986 12.3457 19.7721 12.7722L12.7721 19.7722C12.3457 20.1986 11.6543 20.1986 11.2278 19.7722C10.8013 19.3457 10.8013 18.6543 11.2278 18.2278L16.3636 13.092H4.99996C4.39686 13.092 3.90796 12.6031 3.90796 12C3.90796 11.3969 4.39686 10.908 4.99996 10.908H16.3636L11.2278 5.77215C10.8013 5.3457 10.8013 4.65428 11.2278 4.22783Z" fill="#FAFAFA"/>
+          </svg></button>
+        
     </div>
     <div class="block3">
         <div class="block3rowCol">
             <a name="creativ"></a>
             <p class="pTitle">Креативы</p>
             <h1>Создаем<br> очень много интересных<br> креативов</h1>
+            <div class="mobilSlider">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="contentItem2">
+                            <img src="./imgs/creativ1.png" alt="marketing" class="sliderCreativ">
+                            
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="contentItem2">
+                            <img src="./imgs/creativ1.png" alt="marketing" class="sliderCreativ">
+                            
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="contentItem2">
+                            <img src="./imgs/creativ1.png" alt="marketing" class="sliderCreativ">
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
             <p id="block3text">Чтобы цеплять внимание пользователей <br>и ваша реклама просто не пролиствовалась,<br>а бюджет не сливался.  </p>
             <button class="mainButton" id="blueButton">Создать креатив<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2278 4.22783C11.6543 3.80138 12.3457 3.80138 12.7721 4.22783L19.7721 11.2278C20.1986 11.6543 20.1986 12.3457 19.7721 12.7722L12.7721 19.7722C12.3457 20.1986 11.6543 20.1986 11.2278 19.7722C10.8013 19.3457 10.8013 18.6543 11.2278 18.2278L16.3636 13.092H4.99996C4.39686 13.092 3.90796 12.6031 3.90796 12C3.90796 11.3969 4.39686 10.908 4.99996 10.908H16.3636L11.2278 5.77215C10.8013 5.3457 10.8013 4.65428 11.2278 4.22783Z" fill="#10B3DD"/>
@@ -624,16 +646,7 @@
                   </svg>
                 </button>
             </div>
-            <div class="buttonRow6M">
-                <button class="sliderButtonL" id="prev6M"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7722 4.2278C12.3457 3.80135 11.6543 3.80135 11.2279 4.2278L4.22788 11.2278C3.80142 11.6543 3.80142 12.3457 4.22788 12.7721L11.2279 19.7721C11.6543 20.1986 12.3457 20.1986 12.7722 19.7721C13.1987 19.3457 13.1987 18.6543 12.7722 18.2278L7.63636 13.092H19C19.6031 13.092 20.092 12.6031 20.092 12C20.092 11.3969 19.6031 10.908 19 10.908H7.63636L12.7722 5.77212C13.1987 5.34567 13.1987 4.65425 12.7722 4.2278Z" fill="#39CCF1"/>
-                  </svg>
-                </button>
-                <button class="sliderButtonR" id="next6M"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2278 4.2278C11.6543 3.80135 12.3457 3.80135 12.7721 4.2278L19.7721 11.2278C20.1986 11.6543 20.1986 12.3457 19.7721 12.7721L12.7721 19.7721C12.3457 20.1986 11.6543 20.1986 11.2278 19.7721C10.8013 19.3457 10.8013 18.6543 11.2278 18.2278L16.3636 13.092H4.99996C4.39686 13.092 3.90796 12.6031 3.90796 12C3.90796 11.3969 4.39686 10.908 4.99996 10.908H16.3636L11.2278 5.77212C10.8013 5.34567 10.8013 4.65425 11.2278 4.2278Z" fill="#39CCF1"/>
-                  </svg>
-                </button>
-            </div>
+            
             
         </div>
         <div class="slider6">
@@ -764,134 +777,113 @@
                 </div>
             </div>
         </div>
-        <div class="slider6M">
-            <div class="sliderLine6M">
-                <div class="item6">
-                    <h3>Образовательный центр</h3>
-                    <div class="infoRow6">
-                        <div class="infoRowCol">
-                            <p class="name6">Лидов</p>
-                            <h4>82</h4>
+        <div class="mobilSlider">
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="item6">
+                        <h3>Образовательный центр</h3>
+                        <div class="infoRow6">
+                            <div class="infoRowCol">
+                                <p class="name6">Лидов</p>
+                                <h4>82</h4>
+                            </div>
+                            <div class="infoRowCol">
+                                <p class="name6">Прибыль</p>
+                                <h4>1.08 млн</h4>
+                            </div>
                         </div>
-                        <div class="infoRowCol">
-                            <p class="name6">Прибыль</p>
-                            <h4>1.08 млн</h4>
-                        </div>
-                    </div>
-                    <div class="item6colCol">
-                        <div class="item6rowRow">
-                            <p class="name6">Прибыль</p>
-                            <p class="name6B">$257</p>
-                        </div>
-                        <div class="item6rowRow">
-                            <p class="name6">Конверсия</p>
-                            <p class="name6B">20%</p>
-                        </div>
-                        <div class="item6rowRow">
-                            <p class="name6">Кол-во продаж</p>
-                            <p class="name6B">16</p>
-                        </div>
-                        <div class="item6rowRow">
-                            <p class="name6">Средний чек</p>
-                            <p class="name6B">67 500 ₸</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item6">
-                    <h3>Образовательный центр</h3>
-                    <div class="infoRow6">
-                        <div class="infoRowCol">
-                            <p class="name6">Лидов</p>
-                            <h4>82</h4>
-                        </div>
-                        <div class="infoRowCol">
-                            <p class="name6">Прибыль</p>
-                            <h4>1.08 млн</h4>
-                        </div>
-                    </div>
-                    <div class="item6colCol">
-                        <div class="item6rowRow">
-                            <p class="name6">Прибыль</p>
-                            <p class="name6B">$257</p>
-                        </div>
-                        <div class="item6rowRow">
-                            <p class="name6">Конверсия</p>
-                            <p class="name6B">20%</p>
-                        </div>
-                        <div class="item6rowRow">
-                            <p class="name6">Кол-во продаж</p>
-                            <p class="name6B">16</p>
-                        </div>
-                        <div class="item6rowRow">
-                            <p class="name6">Средний чек</p>
-                            <p class="name6B">67 500 ₸</p>
+                        <div class="item6colCol">
+                            <div class="item6rowRow">
+                                <p class="name6">Прибыль</p>
+                                <p class="name6B">$257</p>
+                            </div>
+                            <div class="item6rowRow">
+                                <p class="name6">Конверсия</p>
+                                <p class="name6B">20%</p>
+                            </div>
+                            <div class="item6rowRow">
+                                <p class="name6">Кол-во продаж</p>
+                                <p class="name6B">16</p>
+                            </div>
+                            <div class="item6rowRow">
+                                <p class="name6">Средний чек</p>
+                                <p class="name6B">67 500 ₸</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="item6">
-                    <h3>Образовательный центр</h3>
-                    <div class="infoRow6">
-                        <div class="infoRowCol">
-                            <p class="name6">Лидов</p>
-                            <h4>82</h4>
+                <div class="item">
+                    <div class="item6">
+                        <h3>Образовательный центр</h3>
+                        <div class="infoRow6">
+                            <div class="infoRowCol">
+                                <p class="name6">Лидов</p>
+                                <h4>82</h4>
+                            </div>
+                            <div class="infoRowCol">
+                                <p class="name6">Прибыль</p>
+                                <h4>1.08 млн</h4>
+                            </div>
                         </div>
-                        <div class="infoRowCol">
-                            <p class="name6">Прибыль</p>
-                            <h4>1.08 млн</h4>
-                        </div>
-                    </div>
-                    <div class="item6colCol">
-                        <div class="item6rowRow">
-                            <p class="name6">Прибыль</p>
-                            <p class="name6B">$257</p>
-                        </div>
-                        <div class="item6rowRow">
-                            <p class="name6">Конверсия</p>
-                            <p class="name6B">20%</p>
-                        </div>
-                        <div class="item6rowRow">
-                            <p class="name6">Кол-во продаж</p>
-                            <p class="name6B">16</p>
-                        </div>
-                        <div class="item6rowRow">
-                            <p class="name6">Средний чек</p>
-                            <p class="name6B">67 500 ₸</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item6">
-                    <h3>Образовательный центр</h3>
-                    <div class="infoRow6">
-                        <div class="infoRowCol">
-                            <p class="name6">Лидов</p>
-                            <h4>82</h4>
-                        </div>
-                        <div class="infoRowCol">
-                            <p class="name6">Прибыль</p>
-                            <h4>1.08 млн</h4>
-                        </div>
-                    </div>
-                    <div class="item6colCol">
-                        <div class="item6rowRow">
-                            <p class="name6">Прибыль</p>
-                            <p class="name6B">$257</p>
-                        </div>
-                        <div class="item6rowRow">
-                            <p class="name6">Конверсия</p>
-                            <p class="name6B">20%</p>
-                        </div>
-                        <div class="item6rowRow">
-                            <p class="name6">Кол-во продаж</p>
-                            <p class="name6B">16</p>
-                        </div>
-                        <div class="item6rowRow">
-                            <p class="name6">Средний чек</p>
-                            <p class="name6B">67 500 ₸</p>
+                        <div class="item6colCol">
+                            <div class="item6rowRow">
+                                <p class="name6">Прибыль</p>
+                                <p class="name6B">$257</p>
+                            </div>
+                            <div class="item6rowRow">
+                                <p class="name6">Конверсия</p>
+                                <p class="name6B">20%</p>
+                            </div>
+                            <div class="item6rowRow">
+                                <p class="name6">Кол-во продаж</p>
+                                <p class="name6B">16</p>
+                            </div>
+                            <div class="item6rowRow">
+                                <p class="name6">Средний чек</p>
+                                <p class="name6B">67 500 ₸</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="item">
+                    <div class="item6">
+                        <h3>Образовательный центр</h3>
+                        <div class="infoRow6">
+                            <div class="infoRowCol">
+                                <p class="name6">Лидов</p>
+                                <h4>82</h4>
+                            </div>
+                            <div class="infoRowCol">
+                                <p class="name6">Прибыль</p>
+                                <h4>1.08 млн</h4>
+                            </div>
+                        </div>
+                        <div class="item6colCol">
+                            <div class="item6rowRow">
+                                <p class="name6">Прибыль</p>
+                                <p class="name6B">$257</p>
+                            </div>
+                            <div class="item6rowRow">
+                                <p class="name6">Конверсия</p>
+                                <p class="name6B">20%</p>
+                            </div>
+                            <div class="item6rowRow">
+                                <p class="name6">Кол-во продаж</p>
+                                <p class="name6B">16</p>
+                            </div>
+                            <div class="item6rowRow">
+                                <p class="name6">Средний чек</p>
+                                <p class="name6B">67 500 ₸</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
+        <button class="mainButton" id="sixthMainButtonM">Запустить топ-рекламу<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2279 4.2278C11.6544 3.80135 12.3458 3.80135 12.7722 4.2278L19.7722 11.2278C20.1987 11.6543 20.1987 12.3457 19.7722 12.7721L12.7722 19.7721C12.3458 20.1986 11.6544 20.1986 11.2279 19.7721C10.8015 19.3457 10.8015 18.6543 11.2279 18.2278L16.3638 13.092H5.00008C4.39699 13.092 3.90808 12.6031 3.90808 12C3.90808 11.3969 4.39699 10.908 5.00008 10.908H16.3638L11.2279 5.77212C10.8015 5.34567 10.8015 4.65425 11.2279 4.2278Z" fill="#39CCF1"/>
+          </svg></button>
     </div>
     <div class="block7">
         <p class="pTitle">Наша команда</p>
@@ -998,5 +990,25 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+    </script>
 </body>
 </html>

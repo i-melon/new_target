@@ -92,10 +92,7 @@ transition: all ease .2s;
     font-weight: 600;
     line-height: 24px; /* 150% */
 }
-.contactButton:hover{
-    padding: var(--spacing-m, 12px) 24px;
-    gap: var(--spacing-s, 16px);
-}
+
 a{
     text-decoration: none;
     color: #000;
