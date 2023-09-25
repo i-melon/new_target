@@ -159,27 +159,96 @@ document.querySelector('#exitButton').addEventListener('click', function(){
 
 counterM = 0;
 const slider2M = document.querySelector('.contentLine2M')
-document.querySelector('#next2M').addEventListener('click', function(){
-    counterM++
-    if (counterM>3){counterM=0}
-    slider2M.style.transition = 'all ease 1s'
-    slider2M.style.left = -400*counterM + 'px'
-});
-document.querySelector('#prev2M').addEventListener('click', function(){
-    counterM--
-    if (counterM<0){counterM=3}
-    slider2M.style.left = -400*counterM + 'px'
-});
+// document.querySelector('#next2M').addEventListener('click', function(){
+//     counterM++
+//     if (counterM>3){counterM=0}
+//     slider2M.style.transition = 'all ease 1s'
+//     slider2M.style.left = -400*counterM + 'px'
+// });
+// document.querySelector('#prev2M').addEventListener('click', function(){
+//     counterM--
+//     if (counterM<0){counterM=3}
+//     slider2M.style.left = -400*counterM + 'px'
+// });
 
 counter6M = 0;
 const slider6M = document.querySelector('.sliderLine6M')
-document.querySelector('#next6M').addEventListener('click', function(){
-    counter6M++
-    if (counter6M>3){counter6M=0}
-    slider6M.style.left = -372*counter6M + 'px'
-});
-document.querySelector('#prev6M').addEventListener('click', function(){
-    counter6M--
-    if (counter6M<0){counter6M=3}
-    slider6M.style.left = -372*counter6M + 'px'
-});
+// document.querySelector('#next6M').addEventListener('click', function(){
+//     counter6M++
+//     if (counter6M>3){counter6M=0}
+//     slider6M.style.left = -372*counter6M + 'px'
+// });
+// document.querySelector('#prev6M').addEventListener('click', function(){
+//     counter6M--
+//     if (counter6M<0){counter6M=3}
+//     slider6M.style.left = -372*counter6M + 'px'
+// });
+
+function phoneNumberMask(event) {
+    var theEvent = event || window.event;
+    let input = event.target
+    let inputValue = input.value
+
+    if (inputValue.startsWith('+7')) {
+        if (inputValue.length === 2) {
+            input.value = null
+        }
+        else if (inputValue.length === 12) {
+            theEvent.returnValue = false;
+            if(theEvent.preventDefault) theEvent.preventDefault();
+        }
+    }
+    else if (inputValue.length === 1) {
+        input.value = "+7" + inputValue
+    }
+}
+
+function numberValidate(evt) {
+    var theEvent = evt || window.event;
+  
+    // Handle paste
+    if (theEvent.type === 'paste') {
+        key = event.clipboardData.getData('text/plain');
+    } else {
+    // Handle key press
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode(key);
+    }
+    var regex = /[0-9]|\./;
+    if( !regex.test(key) ) {
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+  }
+
+async function sendEmail() {
+  let phoneNumber = document.getElementById('zayavka-phone-number').value;
+
+  if (phoneNumber.length === 12) {
+    const data = {phoneNumber};
+
+    try {
+      const response = await fetch('http://localhost:3000/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        alert('Email sent successfully');
+      } 
+      else {
+        alert('Email sending failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred while sending the email');
+    }
+  }
+  else {
+    alert('Неверный телефонный номер!')
+  }
+
+}

@@ -24,6 +24,8 @@
         src: url('./fonts/TT\ Norms\ Pro\ Trial\ Medium.ttf');
         }
     </style>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
     <div class="dialog">
@@ -32,10 +34,11 @@
             <div class="inputField">
                 <div class="zayavkaTtitle">Оставить заявку</div>
                 <div class="zayavka">Мы перезвоним вам в самое ближайшее<br> время, чтобы обсудить подробности<br> вашего проекта.</div>
-                <input type="number" placeholder="+7">
+                <input id="zayavka-phone-number" type="text" placeholder="+7" maxlength="12"
+                    oninput="phoneNumberMask(event)" onkeypress="numberValidate(event)"">
             </div>
             
-            <button class="mainButton" id="whiteButtonInput">Оставить заявку</button>
+            <button class="mainButton" id="whiteButtonInput" onclick="sendEmail()">Оставить заявку</button>
         </div>
     </div>
     <div class="block1">
