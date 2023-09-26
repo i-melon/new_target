@@ -127,7 +127,7 @@ document.querySelector('#prev7').addEventListener('click', function(){
 
 
 
-dialog = document.querySelector('.dialog');
+var dialog = document.querySelector('.dialog');
 document.querySelector('#orange').addEventListener('click', function(){
     dialog.style.display = 'flex';
 });
@@ -149,6 +149,11 @@ document.querySelector('#sixthMainButtonM').addEventListener('click', function()
 document.querySelector('#callme').addEventListener('click', function(){
     dialog.style.display = 'flex';
 });
+
+function closeDialog() {
+    dialog.style.display = 'none'
+    document.getElementById('zayavka-phone-number').value = '+77'
+}
 
 
 document.querySelector('#exitButton').addEventListener('click', function(){
@@ -222,33 +227,40 @@ function numberValidate(evt) {
   }
 
 async function sendEmail() {
-  let phoneNumber = document.getElementById('zayavka-phone-number').value;
+    let phoneNumber = document.getElementById('zayavka-phone-number').value;
 
-  if (phoneNumber.length === 12) {
-    const data = {phoneNumber};
+    if (phoneNumber.length === 12) {
+        if (phoneNumber.startsWith('+77')) {
+            const data = {phoneNumber};
 
-    try {
-      const response = await fetch('http://localhost:3000/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
-
-      if (response.ok) {
-        alert('Email sent successfully');
-      } 
-      else {
-        alert('Email sending failed');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred while sending the email');
+            try {
+                const response = await fetch('http://localhost:3000/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+            
+                if (response.ok) {
+                    alert('Спасибо за вашу заявку!')
+                    console.log('Email sent successfully');
+                    closeDialog()
+                } 
+                else {
+                    console.log('Email sending failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Произошла какая-то ошибка. Мы уже ее решаем!');
+            }
+        }
+        else {
+            alert('Номер должен начинаться с +77!');
+        }
     }
-  }
-  else {
-    alert('Неверный телефонный номер!')
-  }
+    else {
+        alert('Неверный телефонный номер!')
+    }
 
 }
