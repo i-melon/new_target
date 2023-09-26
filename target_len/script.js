@@ -224,7 +224,7 @@ function numberValidate(evt) {
       theEvent.returnValue = false;
       if(theEvent.preventDefault) theEvent.preventDefault();
     }
-  }
+}
 
 async function sendEmail() {
     let phoneNumber = document.getElementById('zayavka-phone-number').value;
@@ -233,8 +233,12 @@ async function sendEmail() {
         if (phoneNumber.startsWith('+77')) {
             const data = {phoneNumber};
 
+            const url = (location.hostname === "localhost" || location.hostname === "127.0.0.1") ?
+                "http://localhost:3000/send-email" :
+                "https://estetika.agency/send-email"
+
             try {
-                const response = await fetch('http://localhost:3000/send-email', {
+                const response = await fetch(url, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
