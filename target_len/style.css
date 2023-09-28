@@ -261,12 +261,14 @@ padding-left: 15px;
 
 
 .block4{
+    height: 100vh;
     position: relative;
     background: rgb(0, 0, 0) ;
     background-blend-mode: color, normal;
     margin-top: -48px;
-    padding: 96px 112px;
+    overflow: hidden;
     border-radius: 48px 48px 0px 0px;
+    padding-bottom: 100px;
 }
 .block4 p{color: #FAFAFA;}
 .block4 h1{color: #FAFAFA;}
@@ -798,7 +800,7 @@ margin-bottom: 16px;
     align-items: center;
     justify-content: center;
     display: none;
-    z-index: 3;
+    z-index: 4;
 }
 .inputField{
     display: flex;
@@ -806,7 +808,7 @@ margin-bottom: 16px;
     align-items: center;
     gap: 32px;
 }
-.modal{
+.modal{z-index: 4;
     position: relative;
     border-radius: 32px;
 background: #FAFAFA;
@@ -880,4 +882,73 @@ background: var(--color-control-ghost-bg-clear, rgba(255, 255, 255, 0.00));
 #sixthMainButtonM{display: none; color: #39CCF1; margin-top: 57px; margin-bottom: 57px;}
 .block3 .mobilSlider{margin-top: 32px;}
 .owl-dots{margin-top: 21px;}
+.slider3Item{width: 320px;}
 
+
+
+.video{position: relative;z-index: 0;}
+.block4in{z-index: 3; 
+    padding: 96px 112px; position: absolute; top: 0; left: 0;}
+.videoMedia{
+    width: 100%;
+    top:0;
+    left: 0;
+    
+}
+
+
+
+
+.globalThank{
+    padding-top: 48px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.logoThanks{
+    display: flex;
+flex-direction: column;
+align-items: center;
+gap: var(--spacing-m, 12px);
+margin-bottom: 144px;
+}
+.mainThanks{
+    display: flex;
+flex-direction: column;
+align-items: center;
+gap: 32px;
+}
+.mainThanks p{
+    color: #000;
+text-align: center;
+font-family: customFont;
+font-size: 18px;
+font-style: normal;
+font-weight: 450;
+line-height: 30px; /* 166.667% */
+width: 432px;
+}
+.thanksButton{
+    border-radius: 48px;
+border: none;
+background: #000;
+display: flex;
+padding: 14px 48px;
+align-items: center;
+color: #FF5F33;
+font-family: customFontMedium;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: 36px; /* 200% */
+}
+.thanksButton:hover{background: rgb(77, 77, 77);}
+
+
+.slider2img{width: 336px;}
+.sliderCreativ{
+    border-radius: 20px;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;}
