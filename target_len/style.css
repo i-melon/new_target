@@ -952,3 +952,9 @@ line-height: 36px; /* 200% */
 .sliderCreativ{
     border-radius: 20px;
     background: url(<path-to-image>), lightgray 50% / cover no-repeat;}
+
+#mobInf{display: none;}
+#CA{color: #FF5F33; width: 100%; display: none;}
+.workerImg{width: 320px;background: linear-gradient(0deg, #000 0%, #000 100%), url(<path-to-image>), lightgray 50% / cover no-repeat;
+    background-blend-mode: color, normal;}
+.slider7 img {width: 320px;}

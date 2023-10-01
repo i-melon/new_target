@@ -29,7 +29,8 @@ function nextSlide() {
   slider.style.transform = `translateX(${translateXValue})`;
 }
 
-setInterval(nextSlide, 5000); // Измените интервал, если нужно
+setInterval(nextSlide, 5000);// Измените интервал, если нужно
+
 
 
 
@@ -116,12 +117,12 @@ counter7 = 0;
 const slider7 = document.querySelector('.sliderLine7')
 document.querySelector('#next7').addEventListener('click', function(){
     counter7++
-    if (counter7>3){counter7=0}
+    if (counter7>6){counter7=0}
     slider7.style.left = -380*counter7 + 'px'
 });
 document.querySelector('#prev7').addEventListener('click', function(){
     counter7--
-    if (counter7<0){counter7=3}
+    if (counter7<0){counter7=6}
     slider7.style.left = -380*counter7 + 'px'
 });
 
@@ -147,6 +148,9 @@ document.querySelector('#sixthMainButtonM').addEventListener('click', function()
     dialog.style.display = 'flex';
 });
 document.querySelector('#callme').addEventListener('click', function(){
+    dialog.style.display = 'flex';
+});
+document.querySelector('#CA').addEventListener('click', function(){
     dialog.style.display = 'flex';
 });
 
