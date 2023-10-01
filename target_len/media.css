@@ -64,8 +64,8 @@
     .slider6M{display: flex;}
     .item6{width: 270px;}
     .block7{padding: 64px 16px;border-radius: 24px 24px 0px 0px;}
-    #prev7{position: absolute; left: 0; top: 440px; z-index: 3;margin-left: 11px;}
-    #next7{position: absolute; right: 0; top: 440px; z-index: 2;margin-right: 11px;}
+    #prev7{position: absolute; left: 0; top: 540px; z-index: 3;margin-left: 11px;}
+    #next7{position: absolute; right: 0; top: 540px; z-index: 2;margin-right: 11px;}
     .block8{padding: 64px 16px;border-radius: 24px 24px 0px 0px;}
     .block8 .pTitle{width: 250px;}
     .block9{padding: 64px 16px;border-radius: 24px 24px 0px 0px; }
