@@ -104,12 +104,12 @@ counter6 = 0;
 const slider6 = document.querySelector('.sliderLine6')
 document.querySelector('#next6').addEventListener('click', function(){
     counter6++
-    if (counter6>3){counter6=0}
+    if (counter6>2){counter6=0}
     slider6.style.left = -485*counter6 + 'px'
 });
 document.querySelector('#prev6').addEventListener('click', function(){
     counter6--
-    if (counter6<0){counter6=3}
+    if (counter6<0){counter6=2}
     slider6.style.left = -485*counter6 + 'px'
 });
 

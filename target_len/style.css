@@ -958,3 +958,4 @@ line-height: 36px; /* 200% */
 .workerImg{width: 320px;background: linear-gradient(0deg, #000 0%, #000 100%), url(<path-to-image>), lightgray 50% / cover no-repeat;
     background-blend-mode: color, normal;}
 .slider7 img {width: 320px;}
+#fotMob{display: none;}
