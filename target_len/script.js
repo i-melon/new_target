@@ -272,3 +272,31 @@ async function sendEmail() {
     }
 
 }
+
+
+const playButton = document.getElementById('playButton');
+const videoPlayer = document.getElementById('videoPlayer');
+const videoBg = document.querySelector('.mobVideoBg')
+
+// Добавляем обработчик события на кнопку
+playButton.addEventListener('click', function() {
+    if (videoPlayer.paused) {
+        // Если видео остановлено, воспроизводим его
+        videoPlayer.style.display='flex'
+        videoPlayer.play();
+        videoBg.style.display = 'none'
+        playButton.style.display = 'none'
+    } else {
+        // Если видео воспроизводится, ставим его на паузу
+        videoPlayer.pause();
+        playButton.textContent = 'Воспроизвести видео';
+    }
+});
+videoPlayer.addEventListener('ended', function() {
+    // Скрываем элемент <video>
+    videoPlayer.style.display = 'none';
+    videoBg.style.display = 'flex'
+    playButton.style.display = 'flex'
+    // Можно также удалить элемент <video>, если он больше не нужен:
+    // videoPlayer.parentNode.removeChild(videoPlayer);
+});

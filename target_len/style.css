@@ -960,3 +960,14 @@ line-height: 36px; /* 200% */
 .slider7 img {width: 320px;}
 #fotMob{display: none;}
 #pTitle92{margin-top: 32px;}
+.bold{font-family: customFontDemiBold; display: none;}
+.mobileBr{display: none;}
+.mobVideoBg{
+    display: none;
+    width: 100%;
+    margin-top: 24px;
+}
+#videoPlayer{
+    display: none;
+    border-radius: 48px
+}
