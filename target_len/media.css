@@ -86,7 +86,7 @@
     #contactButton{width: 100%; align-items: center; justify-content: center;}
     #fotDesk{display: none;}
     #fotMob{display: flex;}
-    .bold{display: flex;}
+    .bold{display: flex; flex-direction: column;}
     .mobileBr{display: flex;}
 }
 @media (max-width:480px){
