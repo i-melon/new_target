@@ -154,11 +154,6 @@ document.querySelector('#CA').addEventListener('click', function(){
     dialog.style.display = 'flex';
 });
 
-function closeDialog() {
-    dialog.style.display = 'none'
-    document.getElementById('zayavka-phone-number').value = '+77'
-}
-
 
 document.querySelector('#exitButton').addEventListener('click', function(){
     dialog.style.display = 'none';
@@ -193,84 +188,62 @@ const slider6M = document.querySelector('.sliderLine6M')
 //     slider6M.style.left = -372*counter6M + 'px'
 // });
 
-function phoneNumberMask(event) {
-    var theEvent = event || window.event;
-    let input = event.target
-    let inputValue = input.value
-
-    if (inputValue.startsWith('+7')) {
-        if (inputValue.length === 2) {
-            input.value = null
-        }
-        else if (inputValue.length === 12) {
-            theEvent.returnValue = false;
-            if(theEvent.preventDefault) theEvent.preventDefault();
-        }
+IMask(
+    document.getElementById('zayavka-phone-number'),
+    {
+      mask: '+{7} (700) 000-00-00'
     }
-    else if (inputValue.length === 1) {
-        input.value = "+7" + inputValue
-    }
-}
-
-function numberValidate(evt) {
-    var theEvent = evt || window.event;
-  
-    // Handle paste
-    if (theEvent.type === 'paste') {
-        key = event.clipboardData.getData('text/plain');
-    } else {
-    // Handle key press
-        var key = theEvent.keyCode || theEvent.which;
-        key = String.fromCharCode(key);
-    }
-    var regex = /[0-9]|\./;
-    if( !regex.test(key) ) {
-      theEvent.returnValue = false;
-      if(theEvent.preventDefault) theEvent.preventDefault();
-    }
-}
+)
 
 async function sendEmail() {
     let phoneNumber = document.getElementById('zayavka-phone-number').value;
 
-    if (phoneNumber.length === 12) {
-        if (phoneNumber.startsWith('+77')) {
-            const data = {phoneNumber};
+    if (phoneNumber.length === 18) {
+        const data = {phoneNumber};
 
-            const url = (location.hostname === "localhost" || location.hostname === "127.0.0.1") ?
-                "http://localhost:3000/send-email" :
-                "https://estetika.agency/send-email"
+        const url = (location.hostname === "localhost" || location.hostname === "127.0.0.1") ?
+            "http://localhost:3000/send-email" :
+            "https://estetika.agency/send-email"
 
-            try {
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
             
-                if (response.ok) {
-                    alert('Спасибо за вашу заявку!')
-                    console.log('Email sent successfully');
-                    closeDialog()
-                } 
-                else {
-                    console.log('Email sending failed');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Произошла какая-то ошибка. Мы уже ее решаем!');
+            if (response.ok) {
+                alert('Спасибо за вашу заявку!')
+                console.log('Email sent successfully');
+                closeDialog()
+                redirectToThanks()
+            } 
+            else {
+                console.log('Email sending failed');
+                throw Error()
             }
-        }
-        else {
-            alert('Номер должен начинаться с +77!');
+        } 
+        catch (error) {
+            console.error('Error:', error);
+            alert('Произошла какая-то ошибка. Мы уже ее решаем!');
         }
     }
     else {
-        alert('Неверный телефонный номер!')
+        alert('Неверный телефонный номер! Недостаточное количество цифр!')
     }
+}
 
+function closeDialog() {
+    dialog.style.display = 'none'
+    document.getElementById('zayavka-phone-number').value = '+77'
+}
+
+function redirectToThanks() {
+    let aLink = document.createElement('a');
+    aLink.href = "./thanks.html"
+    aLink.click()
 }
 
 
