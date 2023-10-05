@@ -237,7 +237,6 @@ async function sendEmail() {
 
 function closeDialog() {
     dialog.style.display = 'none'
-    document.getElementById('zayavka-phone-number').value = '+77'
 }
 
 function redirectToThanks() {
