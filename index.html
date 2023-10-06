@@ -57,13 +57,15 @@
     <div class="dialog">
         <div class="modal">
             <img src="./imgs/exit.svg" alt="" id="exitButton">
-            <div class="inputField">
-                <div class="zayavkaTtitle">Оставить заявку</div>
-                <div class="zayavka">Мы перезвоним вам в самое ближайшее<br> время, чтобы обсудить подробности<br> вашего проекта.</div>
-                <input id="zayavka-phone-number" type="text">
-            </div>
-            
-            <button class="mainButton" id="whiteButtonInput" onclick="sendEmail()">Оставить заявку</button>
+            <form action="mail.php" method="POST">
+                <div class="inputField">
+                    <div class="zayavkaTtitle">Оставить заявку</div>
+                    <div class="zayavka">Мы перезвоним вам в самое ближайшее<br> время, чтобы обсудить подробности<br> вашего проекта.</div>
+                    <input id="zayavka-phone-number" type="text" name="phone">
+                </div>
+
+                <button type="submit" ="mainButton" id="whiteButtonInput">Оставить заявку</button>        
+            </form>
         </div>
     </div>
     <div class="block1">

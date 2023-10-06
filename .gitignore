@@ -1,4 +1,5 @@
 .gitignore.save
-/target_len/node_modules/
-/target_len/.env
-/target_len/package-lock.json
+/node_modules/
+/vendor/
+/.env
+/package-lock.json

@@ -214,11 +214,13 @@ async function sendEmail() {
                 body: JSON.stringify(data)
             });
             
+            
             if (response.ok) {
+                console.log(response)
                 // alert('Спасибо за вашу заявку!')
                 console.log('Email sent successfully');
                 closeDialog()
-                redirectToThanks()
+                // redirectToThanks()
             } 
             else {
                 console.log('Email sending failed');
