@@ -235,7 +235,7 @@ async function sendEmail() {
                 else {
                     console.log('Email sent successfully');
                     closeDialog()
-                    // redirectToThanks()
+                    redirectToThanks()
                 }
             });
         } 
