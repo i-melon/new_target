@@ -196,36 +196,48 @@ IMask(
 )
 
 async function sendEmail() {
+    let button = document.getElementById('whiteButtonInput');
+    button.disabled = true;
+
     let phoneNumber = document.getElementById('zayavka-phone-number').value;
 
     if (phoneNumber.length === 18) {
-        const data = {phoneNumber};
+        const formData = {phoneNumber};
 
         const url = (location.hostname === "localhost" || location.hostname === "127.0.0.1") ?
-            "http://localhost:3000/send-email" :
-            "https://estetika.agency/send-email"
+            "http://127.0.0.1:8000/mail.php" :
+            "https://estetika.agency/mail.php"
 
         try {
-            const response = await fetch(url, {
+            fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json() )
+            .then(result => {
+                console.log(result)
+
+                if (result.status == "error") {
+                    if (result.message == "Invalid request.") {
+                        document.getElementById('whiteButtonInput').onclick = null
+                    }
+                    else if (result.message.startsWith("Message could not be sent")) {
+                        alert('Произошла какая-то ошибка. Мы обязательно ее решим! ' +
+                                'Просим вас связаться с нами по почте - info.estetika.agency@gmail.com.');
+                    }
+    
+                    console.log('Email sending failed');
+                    throw Error()
+                }
+                else {
+                    console.log('Email sent successfully');
+                    closeDialog()
+                    // redirectToThanks()
+                }
             });
-            
-            
-            if (response.ok) {
-                console.log(response)
-                // alert('Спасибо за вашу заявку!')
-                console.log('Email sent successfully');
-                closeDialog()
-                // redirectToThanks()
-            } 
-            else {
-                console.log('Email sending failed');
-                throw Error()
-            }
         } 
         catch (error) {
             console.error('Error:', error);
@@ -235,6 +247,8 @@ async function sendEmail() {
     else {
         alert('Неверный телефонный номер! Недостаточное количество цифр!')
     }
+
+    button.disabled = false;
 }
 
 function closeDialog() {
