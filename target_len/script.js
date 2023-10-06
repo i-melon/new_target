@@ -215,7 +215,7 @@ async function sendEmail() {
             });
             
             if (response.ok) {
-                alert('Спасибо за вашу заявку!')
+                // alert('Спасибо за вашу заявку!')
                 console.log('Email sent successfully');
                 closeDialog()
                 redirectToThanks()
