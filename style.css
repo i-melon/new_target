@@ -974,3 +974,5 @@ line-height: 36px; /* 200% */
     display: none;
     border-radius: 48px
 }
+.miniPicW{width: 24px;}
+.revRowM{display: flex; gap: 8px;}
