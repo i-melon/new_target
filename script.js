@@ -188,77 +188,8 @@ const slider6M = document.querySelector('.sliderLine6M')
 //     slider6M.style.left = -372*counter6M + 'px'
 // });
 
-IMask(
-    document.getElementById('zayavka-phone-number'),
-    {
-      mask: '+{7} (700) 000-00-00'
-    }
-)
-
-async function sendEmail() {
-    let button = document.getElementById('whiteButtonInput');
-    button.disabled = true;
-
-    let phoneNumber = document.getElementById('zayavka-phone-number').value;
-
-    if (phoneNumber.length === 18) {
-        const formData = {phoneNumber};
-
-        const url = (location.hostname === "localhost" || location.hostname === "127.0.0.1") ?
-            "http://127.0.0.1:8000/mail.php" :
-            "https://estetika.agency/mail.php"
-
-        try {
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json() )
-            .then(result => {
-                console.log(result)
-
-                if (result.status == "error") {
-                    if (result.message == "Invalid request.") {
-                        document.getElementById('whiteButtonInput').onclick = null
-                    }
-                    else if (result.message.startsWith("Message could not be sent")) {
-                        alert('Произошла какая-то ошибка. Мы обязательно ее решим! ' +
-                                'Просим вас связаться с нами по почте - info.estetika.agency@gmail.com.');
-                    }
-    
-                    console.log('Email sending failed');
-                    throw Error()
-                }
-                else {
-                    console.log('Email sent successfully');
-                    closeDialog()
-                    redirectToThanks()
-                }
-            });
-        } 
-        catch (error) {
-            console.error('Error:', error);
-            alert('Произошла какая-то ошибка. Мы уже ее решаем!');
-        }
-    }
-    else {
-        alert('Неверный телефонный номер! Недостаточное количество цифр!')
-    }
-
-    button.disabled = false;
-}
-
 function closeDialog() {
     dialog.style.display = 'none'
-}
-
-function redirectToThanks() {
-    let aLink = document.createElement('a');
-    aLink.href = "./thanks.html"
-    aLink.click()
 }
 
 

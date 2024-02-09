@@ -5,13 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estetika Agency</title>
+
     <script src="https://unpkg.com/imask"></script>
+    <script src="js/email.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @import './style.css';
         @import './overall.css';
         @import './media.css';
+        @import "./css/loader.css";
         @font-face {
         font-family: customFont;
         src: url('./fonts/TT\ Norms\ Pro\ Trial\ Normal.ttf');
@@ -25,6 +29,7 @@
         src: url('./fonts/TT\ Norms\ Pro\ Trial\ Medium.ttf');
         }
     </style>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11358930557"></script>
     <script>
@@ -34,6 +39,8 @@
 
     gtag('config', 'AW-11358930557');
     </script>
+    <!-- Google tag (gtag.js) -->
+
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -54,19 +61,25 @@
 </head>
 
 <body>
+    <!-- Loader -->
+    <section id="loader">
+        <div id="loader-content"></div>
+    </section>
+
     <div class="dialog">
-        <div class="modal">
+        <form class="modal">
             <img src="./imgs/exit.svg" alt="" id="exitButton">
 
             <div class="inputField">
                 <div class="zayavkaTtitle">Оставить заявку</div>
                 <div class="zayavka">Мы перезвоним вам в самое ближайшее<br> время, чтобы обсудить подробности<br> вашего проекта.</div>
-                <input id="zayavka-phone-number" type="text" name="phone">
+                <input id="zayavka-phone-number" type="text" name="phone" placeholder="+7 (700) 000-00-00">
             </div>
 
-            <button class="mainButton" id="whiteButtonInput" onclick="sendEmail()">Оставить заявку</button>  
-        </div>
+            <button class="mainButton" id="whiteButtonInput">Оставить заявку</button>
+        </form>
     </div>
+
     <div class="block1">
         <header>
             <div class="logo">
@@ -1169,6 +1182,13 @@
                 }
             }
         })
+
+        IMask(
+            document.getElementById('zayavka-phone-number'),
+            {
+                mask: '+{7} (700) 000-00-00'
+            }
+        )
     </script>
 </body>
 </html>
